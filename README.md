@@ -45,7 +45,7 @@ Across the United States, how have emissions from coal combustion-related source
 How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?
 Compare emissions from motor vehicle sources in Baltimore City with emissions from motor vehicle sources in Los Angeles County, California, fips == "06037". Which city has seen greater changes over time in motor vehicle emissions?
 
-#Making and Submitting Plots
+# Making and Submitting Plots
 
 For each plot you should
 
