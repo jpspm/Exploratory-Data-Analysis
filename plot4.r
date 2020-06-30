@@ -1,0 +1,12 @@
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+mergedData<-merge(NEI, SCC, by ="SCC")
+coalM<- grepl("coal", mergedData$Short.Name, ignore.case=TRUE)
+subsMG <- mergedData[coalM, ]
+totalByYear<- aggregate(Emissions ~ year, subsMG, sum)
+#library(ggplot2)
+png("plot4.png", width=640, height=480)
+gplot<- ggplot(totalByYear, aes(factor(year), Emissions))
+gplot<-gplot+geom_bar(stat = "identity")+xlab("Years")+ylab("Emission")+ggtitle("Total emission from coal sources from 1999 to 2008'")
+print(gplot)
+dev.off()
